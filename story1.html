@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cinderella</title>
+
+<style>
+body {
+    font-family: Georgia;
+    background: #fce4ec;
+    text-align: center;
+    padding: 30px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #ec407a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #d81b60;
+}
+
+.hidden {
+    display: none;
+    margin-top: 15px;
+    animation: fadeIn 2s ease;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<script>
+function showEnding() {
+    document.getElementById("alt").style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<h1>✨ Cinderella</h1>
+
+<div class="box">
+    <h3>Original Ending</h3>
+    <p>Cinderella marries the prince and lives happily ever after.</p>
+
+    <button onclick="showEnding()">Show Alternate Ending</button>
+
+    <div id="alt" class="hidden">
+        <h3>Alternate Ending</h3>
+        <p>Cinderella chooses independence and starts her own royal academy, becoming a symbol of strength and self-respect.</p>
+    </div>
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>
