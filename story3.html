@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Thirsty Crow</title>
+
+<style>
+body {
+    font-family: Georgia;
+    background: #e8f5e9;
+    text-align: center;
+    padding: 30px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    animation: zoomIn 1.5s ease;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #66bb6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+.hidden {
+    display: none;
+    margin-top: 15px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+</style>
+
+<script>
+function showEnding() {
+    document.getElementById("alt").style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<h1>🐦 The Thirsty Crow</h1>
+
+<div class="box">
+    <h3>Original Ending</h3>
+    <p>The crow drops stones into the pot and drinks water successfully.</p>
+
+    <button onclick="showEnding()">Show Alternate Ending</button>
+
+    <div id="alt" class="hidden">
+        <h3>Alternate Ending</h3>
+        <p>The crow teaches other birds the trick, becoming a wise leader in the forest.</p>
+    </div>
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>
