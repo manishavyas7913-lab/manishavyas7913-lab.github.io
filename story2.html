@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Romeo & Juliet</title>
+
+<style>
+body {
+    font-family: Georgia;
+    background: #e3f2fd;
+    text-align: center;
+    padding: 30px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideIn 1.5s ease;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #1e88e5;
+}
+
+.hidden {
+    display: none;
+    margin-top: 15px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+}
+
+@keyframes slideIn {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0);}
+}
+</style>
+
+<script>
+function showEnding() {
+    document.getElementById("alt").style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<h1>💔 Romeo & Juliet</h1>
+
+<div class="box">
+    <h3>Original Ending</h3>
+    <p>Romeo and Juliet die tragically, ending their love story.</p>
+
+    <button onclick="showEnding()">Show Alternate Ending</button>
+
+    <div id="alt" class="hidden">
+        <h3>Alternate Ending</h3>
+        <p>The plan succeeds, both families reconcile, and Romeo and Juliet live to unite their houses.</p>
+    </div>
+</div>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</body>
+</html>
