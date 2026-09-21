@@ -1,0 +1,612 @@
+/* =========================================================
+   KALINDI VYAS — PERSONAL PORTFOLIO
+   MOBILE-FIRST MASTER STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* Main colours */
+
+    --ivory: #FFF9F4;
+    --lavender: #F1ECFF;
+    --rose: #E8A8BB;
+    --violet: #9B86C8;
+    --mint: #DDEFE7;
+    --peach: #F8DCC8;
+
+    /* Text */
+
+    --plum: #302A35;
+    --muted: #756D78;
+    --soft-text: #938A95;
+
+    /* Glass */
+
+    --glass: rgba(255, 255, 255, 0.58);
+    --glass-strong: rgba(255, 255, 255, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.72);
+
+    /* Shadows */
+
+    --shadow-soft:
+        0 15px 45px rgba(80, 60, 90, 0.08);
+
+    --shadow-card:
+        0 20px 55px rgba(80, 60, 90, 0.11);
+
+    --shadow-button:
+        0 12px 30px rgba(155, 134, 200, 0.22);
+
+    /* Layout */
+
+    --max-width: 1180px;
+
+    --radius-small: 14px;
+    --radius-medium: 24px;
+    --radius-large: 34px;
+
+    --transition:
+        0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--plum);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(241, 236, 255, 0.95),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(248, 220, 200, 0.65),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(221, 239, 231, 0.75),
+            transparent 32%
+        ),
+
+        var(--ivory);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(232, 168, 187, 0.10),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 60%,
+            rgba(155, 134, 200, 0.10),
+            transparent 25%
+        );
+
+    z-index: -1;
+
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+::selection {
+    background: var(--rose);
+    color: var(--plum);
+}
+
+
+/* =========================================================
+   03. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.025em;
+}
+
+
+h1 span,
+h2 span {
+
+    color: var(--violet);
+
+}
+
+
+p {
+    color: var(--muted);
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--violet);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+}
+
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: clamp(
+        2rem,
+        8vw,
+        4rem
+    );
+
+}
+
+
+.section-heading > p:last-child {
+
+    margin-top: 18px;
+
+}
+
+
+/* =========================================================
+   04. GENERAL SECTION SETTINGS
+   ========================================================= */
+
+section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        75px
+        20px;
+
+}
+
+
+section > * {
+
+    max-width: var(--max-width);
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* =========================================================
+   05. NAVIGATION
+   ========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 10px 14px;
+
+}
+
+
+.navbar {
+
+    width: 100%;
+
+    max-width: 1180px;
+
+    min-height: 58px;
+
+    margin: auto;
+
+    padding: 0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.62);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: var(--shadow-soft);
+
+}
+
+
+.logo {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+    color: var(--plum);
+
+}
+
+
+.menu-toggle {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--lavender);
+
+    color: var(--plum);
+
+    font-size: 1.25rem;
+
+}
+
+
+.nav-links {
+
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 14px;
+
+    right: 14px;
+
+    display: none;
+
+    flex-direction: column;
+
+    padding: 14px;
+
+    gap: 4px;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+
+.nav-links.active {
+    display: flex;
+}
+
+
+.nav-links a {
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+
+    font-weight: 600;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+.nav-links a:hover,
+.nav-links a:focus {
+
+    background: var(--lavender);
+
+    color: var(--plum);
+
+}
+
+
+/* =========================================================
+   06. BUTTONS
+   ========================================================= */
+
+.primary-button,
+.secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border-radius: 14px;
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+
+}
+
+
+.primary-button {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--violet),
+            #B18BB6
+        );
+
+    box-shadow: var(--shadow-button);
+
+}
+
+
+.secondary-button {
+
+    color: var(--plum);
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    border:
+        1px solid
+        rgba(155, 134, 200, 0.20);
+
+}
+
+
+.primary-button:hover,
+.secondary-button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.primary-button:hover {
+
+    box-shadow:
+        0 18px 38px
+        rgba(155, 134, 200, 0.28);
+
+}
+
+
+.text-link {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: var(--violet);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   07. HOME HERO
+   ========================================================= */
+
+.hero-section {
+
+    min-height: calc(100vh - 78px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 55px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-content {
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+.hero-label {
+
+    margin-bottom: 15px;
+
+    color: var(--violet);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: clamp(
+        3.2rem,
+        15vw,
+        7rem
+    );
+
+}
+
+
+.hero-content h2 {
+
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    font-size: clamp(
+        1.3rem,
+        5vw,
+        2.4rem
+    );
+
+}
+
+
+.hero-description {
+
+    max-width: 600px;
+
+    margin:
